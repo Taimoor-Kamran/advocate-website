@@ -1,0 +1,657 @@
+/* ==========================================================================
+   KHAN & ASSOCIATES — shared stylesheet
+   Design: navy (#0d2240) + white, Playfair Display headings, Inter UI text.
+   Mobile-first: base styles are for phones; @media blocks scale up.
+
+   QUICK EDITS — the variables below control the whole site:
+   ========================================================================== */
+
+:root {
+  --navy:        #0d2240;   /* primary brand color */
+  --navy-dark:   #081729;   /* darker navy (footer bottom, hovers) */
+  --navy-soft:   #16304f;   /* lighter navy (card hovers, submenu) */
+  --gold:        #b99a5f;   /* accent — links, underlines, hovers */
+  --white:       #ffffff;
+  --off-white:   #f6f5f2;   /* tinted section backgrounds */
+  --text:        #24303e;   /* body text on white */
+  --text-muted:  #5c6a79;   /* secondary text */
+  --line:        #e3e0da;   /* hairline borders */
+
+  --font-serif:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:   'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+
+  --header-h:    72px;      /* header height — keep in sync if you restyle */
+}
+
+/* ------------------------------ RESET ---------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }  /* smooth scrolling for #anchor links */
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, iframe { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+address { font-style: normal; }
+
+/* --------------------------- LAYOUT HELPERS ---------------------------- */
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container.narrow { max-width: 800px; }
+
+.section { padding: 64px 0; }
+.section-tint { background: var(--off-white); }
+.section-navy { background: var(--navy); color: var(--white); }
+
+/* Responsive card grid: 1 column on phones, 2 on tablets, 3 on desktop */
+.grid { display: grid; gap: 24px; }
+@media (min-width: 640px)  { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px)  { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.section-more { margin-top: 40px; text-align: center; }
+
+/* --------------------------- TYPOGRAPHY -------------------------------- */
+
+h1, h2, h3, .footer-name { font-family: var(--font-serif); font-weight: 500; }
+
+/* Uppercase letter-spaced labels, e.g. "ALL PRACTICES", "EXPERIENCE" */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.eyebrow-dark { color: var(--navy); }
+
+.section-title       { font-size: 30px; line-height: 1.25; color: var(--navy); margin-bottom: 32px; }
+.section-title-light { font-size: 30px; line-height: 1.25; color: var(--white); margin-bottom: 32px; }
+
+.lead {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 28px;
+}
+
+.prose p { margin-bottom: 18px; color: var(--text-muted); }
+
+@media (min-width: 768px) {
+  .section { padding: 88px 0; }
+  .section-title, .section-title-light { font-size: 36px; }
+}
+
+/* ------------------------------ BUTTONS -------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn-navy { background: var(--navy); color: var(--white); }
+.btn-navy:hover { background: var(--gold); }
+
+.btn-light { background: var(--white); color: var(--navy); }
+.btn-light:hover { background: var(--gold); color: var(--white); }
+
+.btn-outline-light { border-color: rgba(255,255,255,0.5); color: var(--white); }
+.btn-outline-light:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.site-header {
+  position: sticky;          /* stays visible while scrolling */
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Firm name / logo (left side) */
+.logo { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+.logo-tag {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 3px;
+}
+@media (min-width: 768px) { .logo-name { font-size: 24px; } }
+
+/* Search + hamburger icons (right side) */
+.header-actions { display: flex; align-items: center; gap: 6px; }
+.icon-btn {
+  padding: 10px;
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  transition: color 0.2s;
+}
+.icon-btn:hover { color: var(--gold); }
+
+/* ----------------------------- SEARCH BAR ------------------------------
+   Hidden by default; script.js toggles .open on .search-bar. */
+
+.search-bar {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--navy-dark);
+  transition: max-height 0.35s ease;
+}
+.search-bar.open { max-height: 90px; }
+
+.search-bar-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  padding: 6px 2px;
+  outline: none;
+}
+.search-bar input::placeholder { color: rgba(255,255,255,0.45); }
+.search-bar input:focus { border-bottom-color: var(--gold); }
+
+.search-close { color: var(--white); font-size: 26px; line-height: 1; padding: 4px 8px; }
+.search-close:hover { color: var(--gold); }
+
+/* ==========================================================================
+   SLIDE-IN MENU
+   Off-canvas panel on the right; script.js toggles .open on .mobile-menu
+   and .visible on .menu-overlay.
+   ========================================================================== */
+
+/* Dark overlay behind the menu — click it to close */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: rgba(8, 23, 41, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s;
+}
+.menu-overlay.visible { opacity: 1; visibility: visible; }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 200;
+  height: 100dvh;
+  width: min(360px, 88vw);   /* full-ish width on phones, 360px max */
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);            /* hidden off-screen */
+  transition: transform 0.35s ease;
+}
+.mobile-menu.open { transform: translateX(0); }
+
+/* Top row: "MENU" label + X close button */
+.menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.menu-label { font-size: 11px; letter-spacing: 0.28em; color: var(--gold); }
+.menu-close { color: var(--white); }
+.menu-close:hover { color: var(--gold); }
+
+/* Panel slider: two panels side by side, shifted with .show-sub */
+.menu-panels {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-panel {
+  position: absolute;
+  inset: 0;
+  padding: 20px 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Main panel sits in view; sub panel waits off-screen to the right */
+.menu-main { transform: translateX(0); }
+.menu-sub  { transform: translateX(100%); }
+
+/* When EXPERIENCE is opened, script.js adds .show-sub to .menu-panels */
+.menu-panels.show-sub .menu-main { transform: translateX(-100%); }
+.menu-panels.show-sub .menu-sub  { transform: translateX(0); }
+
+/* Menu links and buttons share one look */
+.menu-panel a,
+.menu-panel button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 26px;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  text-align: left;
+  transition: color 0.2s, background 0.2s;
+}
+.menu-panel a:hover,
+.menu-panel button:hover { color: var(--gold); background: var(--navy-soft); }
+
+/* "< BACK" button + submenu heading */
+.submenu-back {
+  justify-content: flex-start !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.menu-sub-label {
+  padding: 12px 26px 6px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Contact links pinned to the bottom of the menu */
+.menu-footer {
+  padding: 20px 26px 28px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+.menu-footer a:hover { color: var(--gold); }
+
+/* Prevent the page behind the menu from scrolling (set by script.js) */
+body.menu-open { overflow: hidden; }
+
+/* ==========================================================================
+   HERO (index.html)
+   ========================================================================== */
+
+.hero {
+  background:
+    linear-gradient(rgba(13, 34, 64, 0.92), rgba(13, 34, 64, 0.97)),
+    /* Subtle diagonal texture — replace with a photo if you like:
+       url('images/hero.jpg') center/cover */
+    repeating-linear-gradient(135deg, #10294d 0 2px, var(--navy) 2px 14px);
+  color: var(--white);
+  padding: 90px 0 100px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.hero-lead {
+  max-width: 620px;
+  font-size: 17px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 36px;
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+
+@media (min-width: 768px) {
+  .hero { padding: 140px 0 150px; }
+  .hero h1 { font-size: 52px; }
+}
+
+/* --------------------------- PAGE BANNER -------------------------------
+   Slim navy banner used at the top of inner pages. */
+
+.page-banner {
+  background: var(--navy);
+  color: var(--white);
+  padding: 56px 0 64px;
+}
+.page-banner h1 { font-size: 32px; }
+@media (min-width: 768px) {
+  .page-banner { padding: 80px 0 90px; }
+  .page-banner h1 { font-size: 44px; }
+}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+/* Practice highlight cards (white, hairline border) */
+.practice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px 26px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.practice-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(13, 34, 64, 0.08);
+}
+.practice-card h3 { font-size: 20px; color: var(--navy); }
+.practice-card p  { font-size: 14.5px; color: var(--text-muted); flex: 1; }
+
+/* Gold "Learn more →" link inside cards */
+.card-link {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* News cards (dark navy with date + headline) */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px;
+  background: var(--navy);
+  color: var(--white);
+  min-height: 220px;
+  transition: background 0.25s, transform 0.25s;
+}
+.news-card:hover { background: var(--navy-soft); transform: translateY(-4px); }
+.news-card h3 { font-size: 19px; line-height: 1.4; flex: 1; }
+.news-date {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   ABOUT PAGE
+   ========================================================================== */
+
+/* Experience statistics on navy band */
+.stats-grid { text-align: center; margin-top: 8px; }
+.stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 48px;
+  color: var(--gold);
+}
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Values (mission section) */
+.values-grid { margin-top: 40px; }
+.value-item h3 {
+  font-size: 19px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+.value-item p { font-size: 14.5px; color: var(--text-muted); }
+
+/* ==========================================================================
+   PRACTICE AREAS PAGE — dropdown filter + list
+   ========================================================================== */
+
+.filter-wrap { position: relative; margin-bottom: 36px; max-width: 340px; }
+
+/* The "ALL PRACTICES ▾" toggle button */
+.filter-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-toggle:hover,
+.filter-toggle[aria-expanded="true"] { background: var(--navy); color: var(--white); }
+.filter-toggle svg { transition: transform 0.25s; }
+.filter-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+/* The dropdown list — hidden until .open is added by script.js */
+.filter-dropdown {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  display: none;
+}
+.filter-dropdown.open { display: block; }
+
+.filter-dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 13px 18px;
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  transition: background 0.15s, color 0.15s;
+}
+.filter-dropdown button:hover  { background: var(--navy-soft); color: var(--white); }
+.filter-dropdown button.active { color: var(--gold); }
+
+/* Practice list: single column on phones, two columns from tablet up */
+.practice-list { display: grid; gap: 20px; }
+@media (min-width: 700px) { .practice-list { grid-template-columns: repeat(2, 1fr); } }
+
+.practice-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px 24px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--navy);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.practice-item:hover {
+  border-left-color: var(--gold);
+  box-shadow: 0 12px 26px rgba(13, 34, 64, 0.08);
+  transform: translateY(-3px);
+}
+.practice-item h3 { font-size: 20px; color: var(--navy); }
+.practice-item p  { font-size: 14.5px; color: var(--text-muted); flex: 1; }
+
+/* Hidden when filtered out (set by script.js) */
+.practice-item.hidden { display: none; }
+
+.filter-empty { color: var(--text-muted); padding: 20px 0; }
+
+/* Industries / regions tag lists */
+.tag-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.tag-list li {
+  padding: 10px 20px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================================================
+   CONTACT PAGE
+   ========================================================================== */
+
+.contact-grid { display: grid; gap: 56px; }
+@media (min-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 72px; }
+}
+
+.contact-list { display: flex; flex-direction: column; gap: 22px; margin-bottom: 36px; }
+.contact-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 3px;
+}
+.contact-list a:hover { color: var(--gold); }
+
+.map-wrap { border: 1px solid var(--line); }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 22px; }
+
+.form-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  background: var(--off-white);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  resize: vertical;
+}
+.form-field input:focus,
+.form-field textarea:focus { border-color: var(--navy); background: var(--white); }
+
+/* Status message under the form — script.js adds .error or .success */
+.form-status { font-size: 14px; min-height: 1em; }
+.form-status.error   { color: #b0413e; }
+.form-status.success { color: #2e7d4f; }
+
+.form-note { font-size: 12px; color: var(--text-muted); }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.site-footer { background: var(--navy); color: var(--white); }
+
+.footer-grid {
+  display: grid;
+  gap: 36px;
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1.4fr; gap: 48px; }
+}
+
+.footer-name  { font-size: 24px; margin-bottom: 8px; }
+.footer-blurb { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+.footer-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.footer-links { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.8); }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 18px 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ==========================================================================
+   FADE-IN ON SCROLL
+   Elements with .fade-in start invisible and slide up when they enter the
+   viewport (script.js adds .visible via IntersectionObserver).
+   ========================================================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Respect users who prefer reduced motion — show everything immediately */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  .mobile-menu, .menu-panel, .menu-overlay, .search-bar { transition: none; }
+}
