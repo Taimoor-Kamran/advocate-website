@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KHAN & ASSOCIATES — shared stylesheet
+   BILLIONS WORKS INTERNATIONAL LAW FIRM — shared stylesheet
    Design: navy (#0d2240) + white, Playfair Display headings, Inter UI text.
    Mobile-first: base styles are for phones; @media blocks scale up.
 
@@ -441,6 +441,37 @@ body.menu-open { overflow: hidden; }
   font-size: 11px;
   letter-spacing: 0.24em;
   color: rgba(255,255,255,0.7);
+}
+
+/* Founder profile card */
+.founder-card {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  background: var(--off-white);
+  padding: 30px 28px;
+}
+.founder-quals {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.founder-list { display: flex; flex-direction: column; gap: 10px; }
+.founder-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+.founder-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
 }
 
 /* Values (mission section) */

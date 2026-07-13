@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KHAN & ASSOCIATES — shared JavaScript (vanilla, no dependencies)
+   BILLIONS WORKS INTERNATIONAL LAW FIRM — shared JavaScript (vanilla, no dependencies)
 
    Contents:
      1. Slide-in menu  (hamburger open, X close, nested EXPERIENCE panel)
