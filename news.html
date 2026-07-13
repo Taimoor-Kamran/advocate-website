@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- EDIT: page title -->
-  <title>News &amp; Client Alerts — Billions Works International Law Firm</title>
-  <meta name="description" content="News, updates and client alerts from Billions Works International Law Firm.">
+  <title>Insights &amp; Updates — Billions Works International Law Firm | Legal Guides for Pakistan</title>
+  <meta name="description" content="Educational legal guides from Billions Works International Law Firm: SECP company registration step by step, AML/CFT compliance obligations in Pakistan, and virtual assets regulation — general information for businesses and individuals.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,19 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/jpeg" href="images/billion_works_logo.jpeg">
+  <!-- SEO: canonical + social sharing cards -->
+  <link rel="canonical" href="https://taimoor-kamran.github.io/advocate-website/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Billions Works International Law Firm">
+  <meta property="og:title" content="Insights &amp; Updates — Billions Works International Law Firm | Legal Guides for Pakistan">
+  <meta property="og:description" content="Educational legal guides from Billions Works International Law Firm: SECP company registration step by step, AML/CFT compliance obligations in Pakistan, and virtual assets regulation — general information for businesses and individuals.">
+  <meta property="og:url" content="https://taimoor-kamran.github.io/advocate-website/news.html">
+  <meta property="og:image" content="https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg">
+  <meta property="og:image:alt" content="Billions Works International Law Firm logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Insights &amp; Updates — Billions Works International Law Firm | Legal Guides for Pakistan">
+  <meta name="twitter:description" content="Educational legal guides from Billions Works International Law Firm: SECP company registration step by step, AML/CFT compliance obligations in Pakistan, and virtual assets regulation — general information for businesses and individuals.">
+  <meta name="twitter:image" content="https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg">
 </head>
 <body>
 
@@ -32,7 +45,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="practice-areas.html">Practice Areas</a>
-          <a href="news.html" class="active">News</a>
+          <a href="news.html" class="active">Insights</a>
           <a href="contact.html">Contact</a>
         </nav>
         <button class="icon-btn search-toggle" aria-label="Toggle search" aria-expanded="false">
@@ -80,7 +93,7 @@
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 5 16 12 9 19"></polyline></svg>
           </button>
         </li>
-        <li><a href="news.html">News &amp; Alerts</a></li>
+        <li><a href="news.html">Insights &amp; Updates</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <ul class="menu-panel menu-sub">
@@ -96,6 +109,8 @@
         <li><a href="practice-areas.html#regions">Regions</a></li>
       </ul>
     </div>
+    <!-- TODO(CONTACT-INFO): replace placeholder phone number and email
+         (tel: link + display text, mailto: link + display text) -->
     <div class="menu-footer">
       <a href="tel:+922100000000">+92 21 0000 0000</a>
       <a href="mailto:info@billionsworks.pk">info@billionsworks.pk</a>
@@ -105,54 +120,178 @@
   <!-- ======================= PAGE BANNER ========================== -->
   <section class="page-banner">
     <div class="container">
-      <p class="eyebrow fade-in">NEWS &amp; CLIENT ALERTS</p>
-      <h1 class="fade-in">News &amp; Insights</h1>
+      <p class="eyebrow fade-in">LEGAL GUIDES &amp; UPDATES</p>
+      <h1 class="fade-in">Insights &amp; Updates</h1>
     </div>
   </section>
 
-  <!-- ======================= NEWS GRID ============================
-       EDIT: each card is one news item. Duplicate a card to add news.
-       Newest items should go first. -->
+  <!-- ======================= INSIGHT ARTICLES =====================
+       Educational articles — general legal information, not legal advice.
+       EDIT: add an <article class="insight-article"> block per new guide. -->
   <section class="section">
-    <div class="container">
-      <div class="grid grid-3">
+    <div class="container narrow">
 
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">JUNE 28, 2026</span>
-          <h3>Firm secures landmark ruling in commercial arbitration appeal</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
+      <p class="insight-note fade-in">
+        The articles below are general legal information for educational
+        purposes only. They are not legal advice and do not create an
+        advocate–client relationship. For advice on your specific
+        circumstances, please <a href="contact.html">contact the firm</a>.
+      </p>
 
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">JUNE 10, 2026</span>
-          <h3>Client alert: Amendments to the Companies Act — what boards need to know</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
+      <article class="insight-article fade-in" id="secp-registration">
+        <span class="news-date">COMPANY LAW</span>
+        <h2>How to register a company with SECP: a step-by-step overview</h2>
+        <div class="prose">
+          <p>
+            Incorporating a company in Pakistan is handled by the Securities and
+            Exchange Commission of Pakistan (SECP), and the entire process now
+            runs online through SECP's eZfile portal. Most applicants choose
+            between a single member (private) company, a private limited
+            company or — less commonly — a public limited company. The right
+            choice depends on the number of participants, financing plans and
+            governance needs.
+          </p>
+          <p>
+            The first formal step is <strong>name reservation</strong>. You
+            propose a company name through the portal, which is checked against
+            existing names and the restrictions in the Companies Act, 2017 —
+            names that are identical or deceptively similar to existing
+            companies, or that contain prohibited or sensitive words without
+            permission, will be refused. A successful reservation is typically
+            valid for sixty days, within which the incorporation application
+            must follow.
+          </p>
+          <p>
+            Next comes the <strong>incorporation application</strong> itself.
+            The key documents are the Memorandum of Association, which states
+            the company's principal line of business, and the Articles of
+            Association, which set out its internal rules. You will also
+            provide particulars and identity documents of subscribers and
+            directors, a registered office address, and details of authorised
+            and paid-up capital. The filing fee varies with authorised capital
+            and is lower for online submission. Once SECP is satisfied, it
+            issues a certificate of incorporation — for straightforward online
+            applications this often takes only a few working days.
+          </p>
+          <p>
+            Incorporation is the beginning, not the end. A new company should
+            promptly attend to <strong>post-incorporation registrations</strong>:
+            obtaining its National Tax Number with the Federal Board of Revenue,
+            opening a company bank account, registering for sales tax where its
+            activities require it (including provincial registrations for
+            services), and registering with employee welfare institutions once
+            staff are hired. The Companies Act also imposes continuing
+            obligations — maintaining statutory registers, filing annual
+            returns and financial statements, and notifying SECP of changes in
+            directors, address or capital. Missing these filings attracts
+            penalties, so a compliance calendar from day one is a sound
+            investment.
+          </p>
+        </div>
+      </article>
 
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">MAY 22, 2026</span>
-          <h3>Billions Works International Law Firm expands banking &amp; finance practice</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
+      <article class="insight-article fade-in" id="aml-compliance">
+        <span class="news-date">COMPLIANCE</span>
+        <h2>Understanding AML/CFT compliance obligations in Pakistan</h2>
+        <div class="prose">
+          <p>
+            Pakistan's anti-money-laundering and counter-terrorist-financing
+            regime is anchored in the Anti-Money Laundering Act, 2010, as
+            amended, and is aligned with the international standards of the
+            Financial Action Task Force (FATF). At the centre of the system
+            sits the Financial Monitoring Unit (FMU), which receives and
+            analyses reports from the regulated sector, while sectoral
+            regulators — principally the State Bank of Pakistan for banks and
+            exchange companies and the SECP for non-bank financial companies,
+            insurers and brokers — supervise compliance. Designated non-financial
+            businesses and professions, such as real estate agents, jewellers,
+            lawyers and accountants, are also brought within the net through
+            their own supervisory arrangements.
+          </p>
+          <p>
+            The core obligations follow a <strong>risk-based approach</strong>.
+            A reporting entity must identify and verify its customers before
+            entering a relationship — the familiar know-your-customer and
+            customer due diligence process — and must look through corporate
+            structures to identify beneficial owners. Higher-risk relationships,
+            including politically exposed persons, call for enhanced due
+            diligence and senior-management approval. Customers and
+            transactions must be screened against the proscribed-persons and
+            United Nations sanctions lists, and assets of designated persons
+            must be frozen without delay under the targeted financial sanctions
+            framework.
+          </p>
+          <p>
+            Two reporting duties matter most in practice: <strong>suspicious
+            transaction reports</strong>, which must be filed with the FMU
+            promptly whenever there are reasonable grounds to suspect that
+            funds are linked to crime, and <strong>currency transaction
+            reports</strong> for cash transactions above the prescribed
+            threshold. Records of transactions and identification data must be
+            retained for at least five years. An effective program also
+            requires a designated compliance officer, ongoing employee
+            training and independent testing of controls.
+          </p>
+          <p>
+            The consequences of failure are serious: administrative penalties,
+            regulatory enforcement affecting licences, and in appropriate cases
+            criminal liability for the entity and responsible officers.
+            Businesses that treat AML/CFT as a governance priority — rather
+            than a paperwork exercise — are far better placed when the
+            regulator calls.
+          </p>
+        </div>
+      </article>
 
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">MAY 05, 2026</span>
-          <h3>Client alert: New SECP disclosure requirements take effect July 2026</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
-
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">APRIL 18, 2026</span>
-          <h3>Successful defense concludes multi-year white collar investigation</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
-
-        <a href="#" class="news-card fade-in">
-          <span class="news-date">MARCH 30, 2026</span>
-          <h3>Client alert: Finance Bill 2026 — key tax changes for businesses</h3>
-          <span class="card-link">Read alert →</span>
-        </a>
-      </div>
+      <article class="insight-article fade-in" id="virtual-assets">
+        <span class="news-date">VIRTUAL ASSETS</span>
+        <h2>Virtual assets regulation in Pakistan: what businesses should know</h2>
+        <div class="prose">
+          <p>
+            For years, the position of virtual assets in Pakistan was defined
+            by caution. In 2018 the State Bank of Pakistan directed banks and
+            other regulated entities not to deal in virtual currencies or
+            facilitate their customers' crypto transactions, which kept the
+            sector outside the formal financial system even as retail interest
+            grew. Holding crypto was not criminalised, but participants had no
+            regulatory protection and businesses had no licensing path.
+          </p>
+          <p>
+            That position has shifted decisively. In 2025 Pakistan moved to
+            create a dedicated regulatory framework for the sector: virtual
+            assets legislation established the <strong>Pakistan Virtual Assets
+            Regulatory Authority (PVARA)</strong> as the licensing and
+            supervisory body for virtual asset service providers, and
+            government-level initiatives signalled an intention to bring
+            exchanges, custodians and related businesses into a regulated
+            perimeter. The framework is designed with FATF standards in mind —
+            in particular Recommendation 15, which requires countries to
+            license or register virtual asset service providers and subject
+            them to full AML/CFT obligations.
+          </p>
+          <p>
+            For businesses, three practical points follow. First,
+            <strong>licensing readiness</strong>: entities operating or
+            planning virtual-asset services should prepare the governance,
+            fit-and-proper, capital and systems documentation that a licensing
+            application will demand. Second, <strong>AML/CFT capability</strong>
+            is non-negotiable — customer due diligence, transaction monitoring,
+            sanctions screening and arrangements for the FATF "travel rule" on
+            transfer information should be designed into the platform, not
+            bolted on. Third, <strong>tax and accounting treatment</strong> of
+            digital assets remains an evolving area, and positions taken now
+            should be documented and defensible.
+          </p>
+          <p>
+            The regulatory landscape is developing quickly, and the details of
+            licensing windows, categories and conditions continue to take
+            shape. Businesses in this sector should verify the current status
+            of the framework before acting, and build compliance into their
+            plans from the outset rather than retrofitting it after
+            enforcement begins.
+          </p>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -168,11 +307,13 @@
         <ul class="footer-links">
           <li><a href="about.html">About</a></li>
           <li><a href="practice-areas.html">Practice Areas</a></li>
-          <li><a href="news.html">News &amp; Alerts</a></li>
+          <li><a href="news.html">Insights &amp; Updates</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
+      <!-- TODO(CONTACT-INFO): replace placeholder phone, email and office
+           address (Suite 000 / Example Chambers are not real) -->
         <p class="footer-heading">CONTACT</p>
         <ul class="footer-links">
           <li><a href="tel:+922100000000">+92 21 0000 0000</a></li>

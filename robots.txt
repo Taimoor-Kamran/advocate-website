@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taimoor-kamran.github.io/advocate-website/sitemap.xml

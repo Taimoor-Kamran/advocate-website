@@ -14,6 +14,52 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/jpeg" href="images/billion_works_logo.jpeg">
+  <!-- SEO: canonical + social sharing cards -->
+  <link rel="canonical" href="https://taimoor-kamran.github.io/advocate-website/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Billions Works International Law Firm">
+  <meta property="og:title" content="Billions Works International Law Firm — Litigation, Compliance &amp; Legal Technology | Pakistan">
+  <meta property="og:description" content="Billions Works International Law Firm is a full-service law firm in Pakistan delivering litigation, corporate advisory, regulatory compliance and legal technology solutions since 2016. Corporate, banking &amp; AML, taxation &amp; customs, arbitration, virtual assets and more.">
+  <meta property="og:url" content="https://taimoor-kamran.github.io/advocate-website/">
+  <meta property="og:image" content="https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg">
+  <meta property="og:image:alt" content="Billions Works International Law Firm logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Billions Works International Law Firm — Litigation, Compliance &amp; Legal Technology | Pakistan">
+  <meta name="twitter:description" content="Billions Works International Law Firm is a full-service law firm in Pakistan delivering litigation, corporate advisory, regulatory compliance and legal technology solutions since 2016. Corporate, banking &amp; AML, taxation &amp; customs, arbitration, virtual assets and more.">
+  <meta name="twitter:image" content="https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg">
+
+  <!-- Structured data for search engines -->
+  <!-- TODO(CONTACT-INFO): replace the placeholder telephone and streetAddress
+       below with the firm's real phone number and office address -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Billions Works International Law Firm",
+    "description": "Full-service law firm in Pakistan delivering litigation, corporate advisory, regulatory compliance and legal technology solutions since 2016.",
+    "url": "https://taimoor-kamran.github.io/advocate-website/",
+    "logo": "https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg",
+    "image": "https://taimoor-kamran.github.io/advocate-website/images/billion_works_logo.jpeg",
+    "foundingDate": "2016",
+    "founder": {
+      "@type": "Person",
+      "name": "Shumaila Sadaf",
+      "jobTitle": "Founder & Managing Partner"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Pakistan"
+    },
+    "telephone": "+92 21 0000 0000",
+    "email": "info@billionsworks.pk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Suite 000, 1st Floor, Example Chambers, Shahrah-e-Faisal",
+      "addressLocality": "Karachi",
+      "addressCountry": "PK"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -39,7 +85,7 @@
           <a href="index.html" class="active">Home</a>
           <a href="about.html">About</a>
           <a href="practice-areas.html">Practice Areas</a>
-          <a href="news.html">News</a>
+          <a href="news.html">Insights</a>
           <a href="contact.html">Contact</a>
         </nav>
         <!-- Search icon — toggles the search bar (script.js) -->
@@ -100,7 +146,7 @@
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 5 16 12 9 19"></polyline></svg>
           </button>
         </li>
-        <li><a href="news.html">News &amp; Alerts</a></li>
+        <li><a href="news.html">Insights &amp; Updates</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
@@ -120,6 +166,8 @@
     </div>
 
     <!-- EDIT: contact details shown at the bottom of the menu -->
+    <!-- TODO(CONTACT-INFO): replace placeholder phone number and email
+         (tel: link + display text, mailto: link + display text) -->
     <div class="menu-footer">
       <a href="tel:+922100000000">+92 21 0000 0000</a>
       <a href="mailto:info@billionsworks.pk">info@billionsworks.pk</a>
@@ -157,32 +205,32 @@
 
       <!-- EDIT: pick which practices to highlight on the homepage -->
       <div class="grid grid-3">
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#corporate" class="practice-card fade-in">
           <h3>Corporate Registration, Compliance &amp; Litigation</h3>
           <p>Company formation, SECP compliance and corporate disputes.</p>
           <span class="card-link">Learn more →</span>
         </a>
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#banking" class="practice-card fade-in">
           <h3>Banking, Finance &amp; AML Compliance</h3>
           <p>Banking, AML/CFT compliance and financial litigation.</p>
           <span class="card-link">Learn more →</span>
         </a>
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#taxation" class="practice-card fade-in">
           <h3>Taxation &amp; Customs</h3>
           <p>Tax advisory, Customs (GD), PSW and customs litigation.</p>
           <span class="card-link">Learn more →</span>
         </a>
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#criminal" class="practice-card fade-in">
           <h3>Criminal &amp; Customs Litigation</h3>
           <p>Criminal defense and customs prosecutions.</p>
           <span class="card-link">Learn more →</span>
         </a>
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#arbitration" class="practice-card fade-in">
           <h3>Arbitration &amp; Mediation</h3>
           <p>Commercial arbitration, mediation and dispute resolution.</p>
           <span class="card-link">Learn more →</span>
         </a>
-        <a href="practice-areas.html" class="practice-card fade-in">
+        <a href="practice-areas.html#virtual-assets" class="practice-card fade-in">
           <h3>Virtual Assets Compliance</h3>
           <p>Virtual asset licensing and regulatory compliance.</p>
           <span class="card-link">Learn more →</span>
@@ -196,34 +244,144 @@
   </section>
 
   <!-- ============================================================
-       LATEST NEWS
+       ABOUT THE FIRM — PREVIEW
+       ============================================================ -->
+  <section class="section section-tint">
+    <div class="container narrow">
+      <p class="eyebrow eyebrow-dark fade-in">ABOUT THE FIRM</p>
+      <h2 class="section-title fade-in">A modern full-service law firm</h2>
+
+      <div class="prose fade-in">
+        <p>
+          Founded in 2016 by Advocate Shumaila Sadaf, Billions Works
+          International Law Firm delivers litigation, corporate advisory,
+          regulatory compliance and legal technology solutions across Pakistan.
+          We combine 15+ years of legal experience with expertise in artificial
+          intelligence, digital assets and emerging technologies — because every
+          client deserves practical advice, meticulous preparation and dedicated
+          representation.
+        </p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat fade-in">
+          <span class="stat-number">2016</span>
+          <span class="stat-label">SERVING SINCE</span>
+        </div>
+        <div class="stat fade-in">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">YEARS EXPERIENCE</span>
+        </div>
+        <div class="stat fade-in">
+          <span class="stat-number">14</span>
+          <span class="stat-label">PRACTICE AREAS</span>
+        </div>
+        <div class="stat fade-in">
+          <span class="stat-number">HC</span>
+          <span class="stat-label">HIGH COURT ADVOCACY</span>
+        </div>
+      </div>
+
+      <div class="section-more fade-in">
+        <a href="about.html" class="btn btn-navy">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOUNDER HIGHLIGHT
+       ============================================================ -->
+  <section class="section">
+    <div class="container narrow">
+      <a href="about.html" class="founder-strip fade-in">
+        <span class="founder-avatar" aria-hidden="true">SS</span>
+        <span class="founder-strip-text">
+          <span class="founder-strip-name">Advocate Shumaila Sadaf</span>
+          <span class="founder-strip-role">Founder &amp; Managing Partner</span>
+          <span class="founder-strip-quals">MS Finance&nbsp;·&nbsp;LL.B&nbsp;·&nbsp;BS Software Engineering&nbsp;·&nbsp;ICMA</span>
+        </span>
+        <span class="card-link">Meet the founder →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT WE STAND FOR (compact — full version on about.html)
        ============================================================ -->
   <section class="section section-tint">
     <div class="container">
-      <p class="eyebrow eyebrow-dark fade-in">NEWS &amp; CLIENT ALERTS</p>
-      <h2 class="section-title fade-in">Latest from the Firm</h2>
+      <p class="eyebrow eyebrow-dark fade-in">OUR VALUES</p>
+      <h2 class="section-title fade-in">What We Stand For</h2>
 
-      <!-- EDIT: homepage news cards — keep in sync with news.html -->
+      <div class="grid grid-3 values-grid">
+        <div class="value-item fade-in">
+          <h3>Integrity</h3>
+          <p>Honest advice, transparent communication and unwavering professional ethics.</p>
+        </div>
+        <div class="value-item fade-in">
+          <h3>Excellence</h3>
+          <p>Every matter is prepared with precision, dedication and strategic thinking.</p>
+        </div>
+        <div class="value-item fade-in">
+          <h3>Innovation</h3>
+          <p>Combining legal expertise with AI, legal technology and digital transformation.</p>
+        </div>
+        <div class="value-item fade-in">
+          <h3>Accessibility</h3>
+          <p>Clear communication and direct client engagement at every stage.</p>
+        </div>
+        <div class="value-item fade-in">
+          <h3>Commitment</h3>
+          <p>Delivering practical legal solutions while protecting our clients' interests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INSIGHTS & UPDATES — educational guides, kept in sync with news.html
+       ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow eyebrow-dark fade-in">INSIGHTS &amp; UPDATES</p>
+      <h2 class="section-title fade-in">Legal Guides &amp; Insights</h2>
+
       <div class="grid grid-3">
-        <a href="news.html" class="news-card fade-in">
-          <span class="news-date">JUNE 28, 2026</span>
-          <h3>Firm secures landmark ruling in commercial arbitration appeal</h3>
-          <span class="card-link">Read alert →</span>
+        <a href="news.html#secp-registration" class="news-card fade-in">
+          <span class="news-date">COMPANY LAW</span>
+          <h3>How to register a company with SECP: a step-by-step overview</h3>
+          <span class="card-link">Read guide →</span>
         </a>
-        <a href="news.html" class="news-card fade-in">
-          <span class="news-date">JUNE 10, 2026</span>
-          <h3>Client alert: Amendments to the Companies Act — what boards need to know</h3>
-          <span class="card-link">Read alert →</span>
+        <a href="news.html#aml-compliance" class="news-card fade-in">
+          <span class="news-date">COMPLIANCE</span>
+          <h3>Understanding AML/CFT compliance obligations in Pakistan</h3>
+          <span class="card-link">Read guide →</span>
         </a>
-        <a href="news.html" class="news-card fade-in">
-          <span class="news-date">MAY 22, 2026</span>
-          <h3>Billions Works International Law Firm expands banking &amp; finance practice</h3>
-          <span class="card-link">Read alert →</span>
+        <a href="news.html#virtual-assets" class="news-card fade-in">
+          <span class="news-date">VIRTUAL ASSETS</span>
+          <h3>Virtual assets regulation in Pakistan: what businesses should know</h3>
+          <span class="card-link">Read guide →</span>
         </a>
       </div>
 
       <div class="section-more fade-in">
-        <a href="news.html" class="btn btn-navy">All News &amp; Alerts</a>
+        <a href="news.html" class="btn btn-navy">All Insights &amp; Updates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BAND
+       ============================================================ -->
+  <section class="section section-navy cta-band">
+    <div class="container">
+      <p class="eyebrow fade-in">GET IN TOUCH</p>
+      <h2 class="section-title-light fade-in">Need legal advice? Discuss your matter with us.</h2>
+      <div class="cta-actions fade-in">
+        <a href="contact.html" class="btn btn-light">Contact Us</a>
+        <!-- TODO(CONTACT-INFO): replace 92XXXXXXXXXX with the firm's real WhatsApp
+             number in international format, digits only (e.g. 923001234567) -->
+        <a href="https://wa.me/92XXXXXXXXXX" class="btn btn-outline-light" rel="noopener" target="_blank">WhatsApp Us</a>
       </div>
     </div>
   </section>
@@ -245,13 +403,15 @@
         <ul class="footer-links">
           <li><a href="about.html">About</a></li>
           <li><a href="practice-areas.html">Practice Areas</a></li>
-          <li><a href="news.html">News &amp; Alerts</a></li>
+          <li><a href="news.html">Insights &amp; Updates</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <!-- EDIT: contact details -->
       <div>
+      <!-- TODO(CONTACT-INFO): replace placeholder phone, email and office
+           address (Suite 000 / Example Chambers are not real) -->
         <p class="footer-heading">CONTACT</p>
         <ul class="footer-links">
           <li><a href="tel:+922100000000">+92 21 0000 0000</a></li>
