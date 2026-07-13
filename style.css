@@ -143,8 +143,16 @@ h1, h2, h3, .footer-name { font-family: var(--font-serif); font-weight: 500; }
   justify-content: space-between;
 }
 
-/* Firm name / logo (left side) */
-.logo { display: flex; flex-direction: column; line-height: 1.2; }
+/* Firm name / logo (left side): round icon + two-line wordmark */
+.logo { display: flex; align-items: center; gap: 10px; line-height: 1.2; }
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.logo-text { display: flex; flex-direction: column; }
 .logo-name {
   font-family: var(--font-serif);
   font-size: 20px;
@@ -157,10 +165,60 @@ h1, h2, h3, .footer-name { font-family: var(--font-serif); font-weight: 500; }
   color: var(--gold);
   margin-top: 3px;
 }
-@media (min-width: 768px) { .logo-name { font-size: 24px; } }
+@media (min-width: 768px) {
+  .logo-name { font-size: 24px; }
+  .logo-icon { width: 42px; height: 42px; }
+  .logo { gap: 12px; }
+}
 
 /* Search + hamburger icons (right side) */
 .header-actions { display: flex; align-items: center; gap: 6px; }
+
+/* ---------------------------- DESKTOP NAV ------------------------------
+   Hidden on phones/tablets (slide-in menu handles navigation there).
+   From 992px up: inline links replace the hamburger. */
+
+.desktop-nav { display: none; }
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-right: 10px;
+  }
+  .desktop-nav a {
+    position: relative;
+    padding: 6px 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.2s;
+  }
+  /* Gold underline slides in on hover; stays on for the active page */
+  .desktop-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .desktop-nav a:hover { color: var(--white); }
+  .desktop-nav a:hover::after { transform: scaleX(1); }
+  .desktop-nav a.active { color: var(--gold); }
+  .desktop-nav a.active::after { transform: scaleX(1); }
+
+  /* Hamburger not needed once the links are inline
+     (.icon-btn.menu-toggle outranks the later .icon-btn display rule) */
+  .icon-btn.menu-toggle { display: none; }
+}
 .icon-btn {
   padding: 10px;
   color: var(--white);
