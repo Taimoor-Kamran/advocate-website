@@ -17,7 +17,7 @@ A static law-firm website — plain HTML, CSS and vanilla JavaScript. No framewo
 ## Editing content
 
 - Every editable spot is marked with an `<!-- EDIT: ... -->` comment.
-- **Firm name, phone, email, address** appear in the header, slide-in menu and footer of *all five* pages — search-and-replace across files (e.g. replace `+92 21 0000 0000` and `info@billionsworks.pk` everywhere).
+- **Firm name, phone, email, address** appear in the header, slide-in menu and footer of *all five* pages — search-and-replace across files (e.g. replace `+92 336 3062108` and `billionsworks@gmail.com` everywhere).
 - **Colors/fonts:** change the CSS variables at the top of `style.css` (`--navy`, `--gold`, etc.).
 - **Practice areas:** in `practice-areas.html`, each item is an `<a class="practice-item">` with a `data-category` matching a filter key in the dropdown.
 - **News:** duplicate a `.news-card` block in `news.html` (newest first) and mirror the top three on `index.html`.
@@ -56,7 +56,7 @@ Bonus: to make the contact form actually deliver emails on Netlify, add `netlify
 4. After a minute the site is live at `https://YOUR-USERNAME.github.io/advocate-website/`.
 
 ### Custom domain
-Both Netlify and GitHub Pages let you attach a custom domain (e.g. `billionsworks.pk`) for free — add the domain in their settings and point your DNS at them.
+Both Netlify and GitHub Pages let you attach a custom domain (e.g. `billionsworksinternational.com`) for free — add the domain in their settings and point your DNS at them.
 
 ## Receiving contact-form emails (optional)
 
