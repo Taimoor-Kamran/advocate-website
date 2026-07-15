@@ -9,7 +9,7 @@ A static law-firm website — plain HTML, CSS and vanilla JavaScript. No framewo
 | `index.html` | Home — hero, practice highlights, latest news |
 | `about.html` | About the firm, experience stats, mission |
 | `practice-areas.html` | All practice areas with "ALL PRACTICES" filter, industries, regions |
-| `news.html` | News & client alerts (charcoal cards) |
+| `news.html` | News & client alerts (teal cards) |
 | `contact.html` | Contact form (front-end only), details, map |
 | `style.css` | All styling — colors are CSS variables at the top |
 | `script.js` | Menu, search toggle, filter, animations, form validation |

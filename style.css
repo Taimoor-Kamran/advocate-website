@@ -1,25 +1,26 @@
 /* ==========================================================================
    BILLIONS WORKS INTERNATIONAL LAW FIRM — shared stylesheet
-   Design: charcoal (#1b1b1f) + gold (#d4af37), Playfair Display headings,
+   Design: royal teal (#0e4f5e) + white, aqua accents (#8fd9d0),
+   Playfair Display headings,
    Inter UI text. Mobile-first: base styles are for phones; @media scale up.
 
    QUICK EDITS — every color on the site comes from the variables below:
    ========================================================================== */
 
 :root {
-  --color-primary:      #1b1b1f;   /* charcoal — header, footer, dark bands, dark cards */
-  --color-primary-dark: #131316;   /* deeper charcoal — search bar, footer bottom */
-  --color-surface:      #26262c;   /* lighter charcoal — card/hover surfaces on dark */
-  --color-accent:       #d4af37;   /* gold — links, icons, labels, active states ON DARK */
-  --color-accent-deep:  #8a6d1f;   /* darker gold — accent TEXT on white (readable) */
-  --color-accent-soft:  rgba(184, 150, 58, 0.35);  /* #b8963a low opacity — subtle borders/dividers */
+  --color-primary:      #0e4f5e;   /* deep royal teal — header, footer, dark bands, dark cards */
+  --color-primary-dark: #0a3d49;   /* deeper teal — search bar, footer bottom */
+  --color-surface:      #15616f;   /* lighter teal — card/hover surfaces on dark */
+  --color-accent:       #8fd9d0;   /* soft aqua — links, icons, labels, active states ON DARK */
+  --color-accent-deep:  #0e4f5e;   /* deep teal — accent TEXT on white (readable) */
+  --color-accent-soft:  rgba(143, 217, 208, 0.35);  /* aqua low opacity — subtle borders/dividers */
   --color-white:        #ffffff;
-  --color-bg:           #fafaf8;   /* body background */
-  --color-bg-soft:      #f4f3ef;   /* tinted section backgrounds */
-  --color-text:         #222222;   /* body text on white */
-  --color-text-muted:   #63636a;   /* secondary text */
-  --color-border:       #e6e5e1;   /* hairline borders on light backgrounds */
-  --color-accent-hover: #bc982b;   /* darker gold — primary button hover */
+  --color-bg:           #fafcfc;   /* body background */
+  --color-bg-soft:      #eff6f6;   /* tinted section backgrounds */
+  --color-text:         #1f2a2c;   /* body text on white */
+  --color-text-muted:   #55676b;   /* secondary text */
+  --color-border:       #dfe9e9;   /* hairline borders on light backgrounds */
+  --color-accent-hover: #79cfc4;   /* deeper aqua — button hover fill */
   --color-success:      #2e7d4f;   /* form success message */
   --color-error:        #b0413e;   /* form error message */
 
@@ -50,13 +51,25 @@ ul { list-style: none; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 address { font-style: normal; }
 
-/* Keyboard focus — gold ring on any interactive element */
+/* Keyboard focus — deep teal ring on light backgrounds… */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-accent-deep);
   outline-offset: 2px;
+}
+
+/* …switching to aqua inside dark (teal) areas so it stays visible */
+.site-header :focus-visible,
+.mobile-menu :focus-visible,
+.site-footer :focus-visible,
+.section-navy :focus-visible,
+.hero :focus-visible,
+.page-banner :focus-visible,
+.news-card:focus-visible,
+.news-card :focus-visible {
+  outline-color: var(--color-accent);
 }
 
 /* --------------------------- LAYOUT HELPERS ---------------------------- */
@@ -127,18 +140,22 @@ h1, h2, h3, .footer-name { font-family: var(--font-serif); font-weight: 500; }
   transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 
-/* PRIMARY buttons — gold background, charcoal text.
+/* PRIMARY buttons — white background, deep teal text.
    (.btn-navy / .btn-light are legacy class names kept so the HTML
-    doesn't need to change; both are now the gold primary style.) */
+    doesn't need to change; both are now the white primary style.)
+   The teal border keeps the button visible on white pages too
+   (e.g. the contact form's Send Message button). */
 .btn-navy,
 .btn-light {
-  background: var(--color-accent);
+  background: var(--color-white);
   color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 .btn-navy:hover,
 .btn-light:hover { background: var(--color-accent-hover); }
 
-/* SECONDARY buttons — transparent with gold border, fills gold on hover */
+/* SECONDARY buttons — transparent with 1px aqua border and aqua text,
+   filling aqua on hover (used on dark teal bands only) */
 .btn-outline-light {
   border-color: var(--color-accent);
   color: var(--color-accent);
@@ -225,7 +242,7 @@ h1, h2, h3, .footer-name { font-family: var(--font-serif); font-weight: 500; }
     color: rgba(255, 255, 255, 0.85);
     transition: color 0.2s;
   }
-  /* Gold underline slides in on hover; stays on for the active page */
+  /* Aqua underline slides in on hover; stays on for the active page */
   .desktop-nav a::after {
     content: "";
     position: absolute;
@@ -416,7 +433,7 @@ body.menu-open { overflow: hidden; }
 
 .hero {
   background:
-    linear-gradient(rgba(27, 27, 31, 0.92), rgba(27, 27, 31, 0.97)),
+    linear-gradient(rgba(14, 79, 94, 0.92), rgba(14, 79, 94, 0.97)),
     /* Subtle diagonal texture — replace with a photo if you like:
        url('images/hero.jpg') center/cover */
     repeating-linear-gradient(135deg, var(--color-surface) 0 2px, var(--color-primary) 2px 14px);
@@ -504,17 +521,17 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-accent-deep);   /* dark gold — sits on a white strip */
+  color: var(--color-accent-deep);   /* deep teal — sits on a white strip */
 }
 .founder-strip-quals { font-size: 13px; color: var(--color-text-muted); }
 
-/* Full-width charcoal CTA band */
+/* Full-width teal CTA band */
 .cta-band { text-align: center; }
 .cta-band .section-title-light { margin-bottom: 26px; }
 .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
 
 /* --------------------------- PAGE BANNER -------------------------------
-   Slim charcoal banner used at the top of inner pages. */
+   Slim teal banner used at the top of inner pages. */
 
 .page-banner {
   background: var(--color-primary);
@@ -549,9 +566,9 @@ body.menu-open { overflow: hidden; }
 .practice-card h3 { font-size: 20px; color: var(--color-primary); }
 .practice-card p  { font-size: 14.5px; color: var(--color-text-muted); flex: 1; }
 
-/* Gold "Learn more →" link inside cards.
-   On white cards the darker gold keeps the label readable;
-   inside dark news cards it switches to bright gold (below). */
+/* Accent "Learn more →" link inside cards.
+   On white cards the deep teal keeps the label readable;
+   inside dark news cards it switches to soft aqua (below). */
 .card-link {
   font-size: 11px;
   font-weight: 600;
@@ -561,7 +578,7 @@ body.menu-open { overflow: hidden; }
 }
 .news-card .card-link { color: var(--color-accent); }
 
-/* News cards (dark charcoal with date + headline) */
+/* News cards (dark teal with date + headline) */
 .news-card {
   display: flex;
   flex-direction: column;
@@ -580,14 +597,14 @@ body.menu-open { overflow: hidden; }
   letter-spacing: 0.2em;
   color: var(--color-accent);
 }
-/* Insight articles sit on a white page — use the readable dark gold there */
+/* Insight articles sit on a white page — use the readable deep teal there */
 .insight-article .news-date { color: var(--color-accent-deep); }
 
 /* ==========================================================================
    ABOUT PAGE
    ========================================================================== */
 
-/* Experience statistics on charcoal band */
+/* Experience statistics on teal band */
 .stats-grid { text-align: center; margin-top: 8px; }
 .stat-number {
   display: block;
@@ -842,7 +859,7 @@ body.menu-open { overflow: hidden; }
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: var(--color-accent-deep);   /* dark gold — label on white page */
+  color: var(--color-accent-deep);   /* deep teal — label on white page */
   margin-bottom: 3px;
 }
 .contact-list a:hover { color: var(--color-accent-deep); }
