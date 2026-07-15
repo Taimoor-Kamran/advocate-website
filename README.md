@@ -9,7 +9,7 @@ A static law-firm website — plain HTML, CSS and vanilla JavaScript. No framewo
 | `index.html` | Home — hero, practice highlights, latest news |
 | `about.html` | About the firm, experience stats, mission |
 | `practice-areas.html` | All practice areas with "ALL PRACTICES" filter, industries, regions |
-| `news.html` | News & client alerts (navy cards) |
+| `news.html` | News & client alerts (charcoal cards) |
 | `contact.html` | Contact form (front-end only), details, map |
 | `style.css` | All styling — colors are CSS variables at the top |
 | `script.js` | Menu, search toggle, filter, animations, form validation |
@@ -18,7 +18,7 @@ A static law-firm website — plain HTML, CSS and vanilla JavaScript. No framewo
 
 - Every editable spot is marked with an `<!-- EDIT: ... -->` comment.
 - **Firm name, phone, email, address** appear in the header, slide-in menu and footer of *all five* pages — search-and-replace across files (e.g. replace `+92 336 3062108` and `billionsworks@gmail.com` everywhere).
-- **Colors/fonts:** change the CSS variables at the top of `style.css` (`--navy`, `--gold`, etc.).
+- **Colors/fonts:** change the CSS variables at the top of `style.css` (`--color-primary`, `--color-accent`, etc.).
 - **Practice areas:** in `practice-areas.html`, each item is an `<a class="practice-item">` with a `data-category` matching a filter key in the dropdown.
 - **News:** duplicate a `.news-card` block in `news.html` (newest first) and mirror the top three on `index.html`.
 - **Google Map:** in `contact.html`, replace the iframe `src` — Google Maps → your office → Share → *Embed a map* → copy the `src` value.
