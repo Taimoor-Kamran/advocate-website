@@ -23,6 +23,7 @@
   --color-accent-hover: #79cfc4;   /* deeper aqua — button hover fill */
   --color-success:      #2e7d4f;   /* form success message */
   --color-error:        #b0413e;   /* form error message */
+  --color-whatsapp:     #25d366;   /* WhatsApp brand green — floating chat button */
 
   --font-serif:  'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans:   'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
@@ -936,6 +937,47 @@ body.menu-open { overflow: hidden; }
   padding: 18px 0;
   font-size: 12px;
   color: rgba(255,255,255,0.5);
+}
+
+/* Social icons (LinkedIn, Facebook, YouTube) under the firm name */
+.footer-social { display: flex; gap: 16px; margin-top: 18px; }
+.footer-social a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.25s;
+}
+.footer-social a:hover { color: var(--color-accent); }
+.footer-social svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON
+   Fixed to the bottom-right of every page; opens a chat with the firm's
+   number via wa.me. EDIT: change the number in the wa.me link in the HTML.
+   ========================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;               /* under the header (100) and slide-in menu (200) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+.whatsapp-float svg { width: 28px; height: 28px; fill: currentColor; }
+
+@media (min-width: 768px) {
+  .whatsapp-float { right: 26px; bottom: 26px; }
 }
 
 /* ==========================================================================
